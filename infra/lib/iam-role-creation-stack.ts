@@ -1,8 +1,9 @@
 const { Role, ServicePrincipal, ManagedPolicy } = require('aws-cdk-lib/aws-iam');
-const { Stack } = require('aws-cdk-lib/aws-cdk');
+import {Stack, StackProps} from 'aws-cdk-lib';
+import {Construct} from 'constructs';
 
-class IAMRoleExample extends Stack {
-    constructor(scope, id, props) {
+export class IAMRoleExample extends Stack {
+    constructor(scope: Construct, id: string, props?: StackProps) {
         super(scope, id, props);
 
         new Role(this, 'MyRole', {
