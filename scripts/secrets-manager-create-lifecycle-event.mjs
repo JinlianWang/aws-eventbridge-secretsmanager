@@ -5,6 +5,6 @@ const path = require('path');
 
 const secretName = `${new Date().getTime()}-secret`;
 
-$`aws secretsmanager create-secret --name ${new Date().getTime()}-secret`;
+$`aws secretsmanager create-secret --name ${secretName}`;
 
 fs.appendFileSync(path.join(__dirname, 'secrets.txt'), `${secretName}\n`);
